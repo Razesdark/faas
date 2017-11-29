@@ -32,8 +32,8 @@ services:
     # Start monitoring
 
     prometheus:
-        image: functions/prometheus:latest  # autobuild from Dockerfile in repo.
-        command: "-config.file=/etc/prometheus/prometheus.yml -storage.local.path=/prometheus -storage.local.memory-chunks=10000 --alertmanager.url=http://alertmanager:9093"
+        image: functions/prometheus:latest-v2  # autobuild from Dockerfile in repo.
+        command: "--config.file=/etc/prometheus/prometheus.yml"
         ports:
             - 9090:9090
         environment:
